@@ -336,16 +336,17 @@ def read_images():
                        [[trisect_mid[1][0]+10,trisect_mid[1][1]+10],[coordinates_game[3][0]-10,coordinates_game[3][1]-10]]]
 
     #coordinatecalc is for the ML model
-    coordinates_calc=[coordinates_game[0], coordinates_game[2]]
-    for i in range(1,11):
-        a=int(coordinates_game[1][0]/i)
-        b=int(coordinates_game[1][1]/i)
-        c=int(coordinates_game[3][0]/i)
-        d=int(coordinates_game[3][1]/i)     
-        l1=[a,b]
-        l2=[c,d]
-        coordinates_calc.append(l1)
-        coordinates_calc.append(l2)
+    coordinates_calc=[]
+
+    # creating a x on the quad with the lines
+    jump_x=(coordinates_game[3][0]-coordinates_game[0][0])/10
+    jump_y=(coordinates_game[3][1]-coordinates_game[0][1])/10
+    for j in range(11):
+        coordinates_calc.append([int(coordinates_game[0][0]+j*jump_x) ,int(coordinates_game[0][1]+ j*jump_y)])
+    jump_x=(coordinates_game[2][0]-coordinates_game[1][0])/10
+    jump_y=(coordinates_game[2][1]-coordinates_game[1][1])/10      
+    for j in range(11):
+        coordinates_calc.append([int(coordinates_game[1][0]+j*jump_x) ,int(coordinates_game[1][1]+ j*jump_y)])
     # print("##############################################################")
     # print(len(coordinates_calc[2]))
     print('coordinate deliverd by coordinate_finder')

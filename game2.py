@@ -98,6 +98,18 @@ while True:
         print("game runing")
         game_init()
         #here we have to do for the logic of writing
+        Detect.main()
+
+        if(Detect.hand_detected()):
+            if(Detect.compare_dist()):
+                coord=Detect.pixel_coordinate()
+                new_color = (0, 0, 0)  # Red color
+
+# Set the color of the specific pixel
+                screen.set_at((coord[0], coord[1]), new_color)
+
+# Update the display
+        pygame.display.flip()
         
 
     count=count+1

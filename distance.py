@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-
+##code for finding the seting the coordinates of the screen
 var=False
 def dist_status():
     global var

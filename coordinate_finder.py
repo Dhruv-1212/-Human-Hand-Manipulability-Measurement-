@@ -3,7 +3,7 @@ import numpy as np
 
 import math
 
-
+##code for finding the screen coordinates in the space
 
 def refining(img):
     kernel = np.array([[1,1,1], [1,1,1], [1,1,1]])
